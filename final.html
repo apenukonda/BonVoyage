@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Booking</title>
+
+
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body,
+html{
+  margin: 0px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+/*------------------------Scroll Bar-----------------------*/
+
+#arrow{
+  width: 30px;
+  cursor: pointer;
+  margin-right: 0px;
+}
+
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px ;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:orange;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: orange;
+}
+
+/*========================Nav Bar=========================*/
+.nav-bar1 {
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 50px;
+  width: 100%;
+  height: 90px;
+  background-color: var(--secondary-color);
+  box-shadow: 3px 3px 10px lightslategray;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  color: var(--primary-color);
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.logo {
+  flex: 1;
+  font-size: 40px;
+  padding: 20px;
+  margin-left: 50px;
+  font-family: Satisfy;
+}
+
+
+
+#icon1{
+  width: 30px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+section ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 70px;
+}
+
+/*========================icon=========================*/
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper1 {
+  display: inline-flex;
+  list-style: none;
+  gap: 70px;
+  padding-left: 200px;
+}
+
+.wrapper1 .icon1 {
+position: relative;
+background: var(--secondary-color);
+border-radius: 50%;
+padding: 25px;
+margin: 10px;
+width: 50px;
+height: 50px;
+font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper1 .tooltip1 {
+position: absolute;
+top: 0;
+font-size: 14px;
+background: #ffffff;
+color: #ffffff;
+padding: 5px 8px;
+border-radius: 5px;
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+opacity: 0;
+pointer-events: none;
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper1 .tooltip1::before {
+position: absolute;
+content: "";
+height: 8px;
+width: 8px;
+background: #ffffff;
+bottom: -3px;
+left: 50%;
+transform: translate(-50%) rotate(45deg);
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper1 .icon1:hover .tooltip1 {
+right: 50px;
+bottom: -20px;
+opacity: 1;
+visibility: visible;
+pointer-events: auto;
+display: block;
+}
+
+.wrapper1 .icon1:hover span,
+.wrapper1 .icon1:hover .tooltip1 {
+text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper1 .facebook:hover,
+.wrapper1 .facebook:hover .tooltip1,
+.wrapper1 .facebook:hover .tooltip1::before {
+background: #1877F2;
+color: #ffffff;
+}
+.wrapper1 .twitter:hover,
+.wrapper1 .twitter:hover .tooltip1,
+.wrapper1 .twitter:hover .tooltip1::before {
+background: #1DA1F2;
+color: #ffffff;
+}
+
+.wrapper1 .instagram:hover,
+.wrapper1 .instagram:hover .tooltip1,
+.wrapper1 .instagram:hover .tooltip1::before {
+background: #E4405F;
+color: #ffffff;
+}
+.wrapper1 .github:hover,
+.wrapper1 .github:hover .tooltip1,
+.wrapper1 .github:hover .tooltip1::before {
+background: #333333;
+color: #ffffff;
+}
+.wrapper1 .youtube:hover,
+.wrapper1 .youtube:hover .tooltip1,
+.wrapper1 .youtube:hover .tooltip1::before {
+background: #CD201F; color: #ffffff;
+}
+
+
+/* -- YouTube Link Styles -- */
+
+#source-link {
+  top: 60px;
+}
+
+#source-link>i {
+  color: rgb(94, 106, 210);
+}
+
+#yt-link {
+  top: 10px;
+}
+
+#yt-link>i {
+  color: rgb(219, 31, 106);
+
+}
+
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(233, 7, 7, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 600ms, border-color 600ms;
+  z-index: 10000;
+}
+
+.meta-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link>i,
+.meta-link>span {
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-link>span {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  transition: color 600ms;
+}  
+       
+        /*========================22222222222=========================*/
+  
+
+ 
+.banner-heading1 {
+  flex: 1;
+}
+
+.banner-heading1 h1 {
+  font-size: 90px;
+  font-weight: normal;
+  color:rgb(249, 163, 5);
+  font-family: Satisfy;
+  padding-bottom:50px;
+  text-align: center;
+  position:static;
+  padding-top: 100px;
+  background-color: var(--secondary-color);
+  text-shadow: 0px 5px 10px var(--primary-color);
+
+}
+
+
+
+        /*========================place=========================*/
+
+.places1{
+  background-color: var(--secondary-color);
+}
+.places1-text1 {
+            text-align: center;
+            margin-bottom: 50px;
+          }
+          
+          .places1-text1 small {
+            font-family: Roboto;
+            color:orange;
+            font-size: 15px;
+            font-weight: bolder;
+          }
+          
+          .places1-text1 h2 {
+            font-family: Barlow Condensed;
+            font-size: 55px;
+            color: #191d34;
+            letter-spacing: 1px;
+          }
+          
+          .cards1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 10px;
+            row-gap: 40px;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+          }
+          
+          .card1 {
+            border: 1px solid lightgray;
+            box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            width: 80%;
+            height: auto;
+            
+          }
+          
+          .card1 img {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+          
+          .cards1 .text1 {
+            padding: 20px;
+            font-family: Barlow Condensed;
+            line-height: 50px;
+          }
+          
+          .cards1 .card-box1 {
+            display: flex;
+            flex-flow: row;
+            background-color:orange;
+            font-size: 18px;
+            font-family: Roboto;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+          
+          }
+          .card-box1 a{
+            text-decoration: none;
+          }
+          .cards1 .time1 {
+            flex: 1;
+          }
+          
+          .cards1 .location1 {
+            flex: 2;
+          }
+          
+          .cards1 .cost1 {
+            color: #4cafad;
+            font-size: 20px;
+          }
+          
+          /*------------Zoom in Photos--------------*/
+          .zoom-img1 {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+          }
+          
+          .zoom-img1 .img-card1 {
+            position: absolute;
+            overflow: hidden;
+          }
+          
+          .img-card1 img {
+            -webkit-transition: 0.8s ease;
+            transition: 0.8s ease;
+          }
+          
+          .card1:hover .zoom-img1 img {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+          .book1{
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+          }
+          .card1-box11{
+            font-size: 20px;
+          }
+          :root{
+                --primary-color:black;
+                --secondary-color:white;
+                
+          }
+
+          .darkmode{
+                    --primary-color:white;
+                    --secondary-color:black;
+                    --ternary-color:orange; 
+                    --quaternary-color:black;
+          }.text1 h2{
+            color: #4cafad;
+          }
+          .finall{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .final {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .final-content {
+            text-align: center;
+            font-family: cursive;
+            font-size: 20px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #555;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+  </style>
+</head>
+<body>
+
+    <!--===========Nav Bar=================-->
+  
+    
+    
+    <section class="nav-bar1">
+
+      <section class="arrow1">
+        <img src="Larrow.png" id="arrow" alt="ddedeff">
+      </section>
+
+
+
+        <div class="logo">Bon Voyage</div>
+      
+<ul class="wrapper1">
+<li class="icon facebook1">
+  <span class="tooltip1">Home</span>
+  <span><i class="fa fa-home1" aria-hidden="true"></i></span>
+</li>
+
+<li class="icon twitter1">
+  <span class="tooltip1">Tour</span>
+  <span><i class="fa fa-plane1"></i></span>
+</li>
+<li class="icon instagram1">
+  <span class="tooltip1">About Us</span>
+  <span><i class="fa fa-info-circle1"></i></span>
+</li>
+<li class="icon github1">
+  <span class="tooltip1">Blogs</span>
+  <span><i class="fa-solid fa-blog1"></i></span>
+</li>
+
+<li class="icon youtube1">
+  <span class="tooltip1">Contact Us</span>
+  <span><i class="fa fa-phone1"></i></span>
+</li>
+</ul>
+
+        <img src="moon1.png" id="icon1" alt="ddedeff">
+        </div>
+</section>
+  
+
+<!--===========Nav Bar=================-->
+    <section class="banner1">
+      <div class="banner-text-item1">
+          <div class="banner-heading1">
+              <h1>Select Your Desination</h1>
+          </div>
+      </div>
+  </section>
+
+
+  <!--==========place=================-->
+            
+  <section class="places1">
+
+    <div class="cards1">
+        <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="019.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Silicon Valley</h2>
+                <p class="cost1">$2130 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Banglore,India</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="020.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The God's own Country</h2>
+                <p class="cost1">$1990 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Kerala,India</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="021.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Pink City</h2>
+                <p class="cost1">$2070 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Jaipur,India</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+            
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="022.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐</span>
+                <h2>The Indian Capital</h2>
+                <p class="cost1">$1840 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ New Delhi,India</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="005.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The City that never Sleeps</h2>
+                <p class="cost1">$1170 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ New York,USA</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="006.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Dalmatian coast</h2>
+                <p class="cost1">$1270 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Dubrovnik, Croatia</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="007.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Land of Cakes</h2>
+                <p class="cost1">$2970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Edinburgh, Scotland</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="008.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Land of History</h2>
+                <p class="cost1">$4170 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Rome, Italy</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="009.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐</span>
+                <h2>The land of Monks</h2>
+                <p class="cost1">$3170 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Paro Valley, Bhutan</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="010.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The land of Haka</h2>
+                <p class="cost1">$4570 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈  Waikato, New Zealand</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="011.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The land of Beaches</h2>
+                <p class="cost1">$970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Havana, Cuba</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="012.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Land of Anime</h2>
+                <p class="cost1">$4970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Tokyo, Japan</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="013.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The White Land</h2>
+                <p class="cost1">$2970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈  Antarctica</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="014.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The land of Casinos</h2>
+                <p class="cost1">$3970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Los Angeles,USA</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="015.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The land of Animals</h2>
+                <p class="cost1">$4560 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Kruger National Park, South Africa</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="016.avif">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The land of Modern Architecture</h2>
+                <p class="cost1">$3449 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈  Singapore</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="017.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐</span>
+                <h2>The land of DisneyLand</h2>
+                <p class="cost1">$1170 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Hong Kong</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="018.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Land of Pyramids</h2>
+                <p class="cost1">$2970 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Cairo, Egypt</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="004.webp">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐</span>
+                <h2>The land in the Middle</h2>
+                <p class="cost1">$2070 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Bora Bora, French Polynesia</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+       
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="003.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The Future</h2>
+                <p class="cost1">$5190 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈  Dubai, U.A.E.</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="card1">
+            <div class="zoom-img1">
+                <div class="img-card1">
+                    <img
+                        src="002.jpg">
+                </div>
+            </div>
+
+            <div class="text1">
+                <span class="rating1">⭐⭐⭐⭐⭐</span>
+                <h2>The City of Love</h2>
+                <p class="cost1">$1870 / Per Person</p>
+                <div class="card-box11">
+                    <p class="time1">✈ Paris, France</p>
+                </div>
+            <div class="card-box1">
+                    <a href="#" class="book1" onclick="openFinal()"><p class="location1." style="font-size: 21px;">Book</p></a>
+            </div>
+            </div>
+          </div> 
+         
+         
+         
+         
+         
+          
+          
+   
+   
+   
+   
+     </div>
+
+     <section class="finall">
+      <div class="overlay" id="overlay"></div>
+      <div class="final" id="final">
+          <div class="final-content">
+              <span class="close-btn" onclick="closeFinal()">&times;</span>
+              <img src="tick.jpg" style="width: 80px; height: 80px; margin: 0%;">
+              <h1 style="margin: 0%;color: rgb(40, 165, 40); ">Confirmed!!</h1>
+              <p style="margin: 0%;">Your trip has been confirmed and you will be contacted for further information.</p>
+              <p style="margin: 0%;">Thank You for choosing. Hope you enjoy your vacation.</p>
+          </div>
+      </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+     <script>
+          var back=document.getElementById('arrow');
+            back.onclick=function(){
+              window.location.href = 'home.html';
+            }
+
+
+      var icon=document.getElementById('icon');
+      icon.onclick=function(){
+        document.body.classList.toggle("darkmode");
+        if(document.body.classList.contains("darkmode")){
+                icon.src="C:\Users\abhii\Downloads\sun1.png";
+                icon.src="C:\Users\abhii\Downloads\Larrow.png";
+              }else{
+                icon.src="images/moon1.png";
+                icon.src="C:\Users\abhii\Downloads\Larrow1.png";
+              }
+              if(document.body.classList.contains("darkmode")){
+                icon.src="C:\Users\abhii\Downloads\Larrow.png";
+              }else{
+                icon.src="C:\Users\abhii\Downloads\Larrow1.png";
+              }
+      }
+  
+      function openFinal() {
+        document.getElementById("final").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeFinal() {
+        document.getElementById("final").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    
+    document.getElementById("overlay").addEventListener("click", closeModal);
+
+    var back=document.getElementById('arrow');
+            back.onclick=function(){
+              window.location.href = 'reseraturt.html';
+            }
+  </script>
+    </body>
+</html>
